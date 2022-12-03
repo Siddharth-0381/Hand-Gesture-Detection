@@ -7,9 +7,35 @@ import streamlit as st
 
 model = tf.keras.models.load_model("hGDetection.h5")
 st.title("Hand Gesture Detection")
-st.sidebar.markdown(
-        """ Developed by \n Siddharth Kanikdale, Vedant Dawange, Anushka Yadav, Purva Potdukhe    
-            Email : spkanikdale@mitaoe.ac.in , vadawange@mitaoe.ac.in, aayadav@mitaoe.ac.in, purva.potdukhe@mitaoe.ac.in""")
+ html_temp_home1 = """<p>Submitted By : </p><br>
+                        <table>
+                          <tr>
+                                <th>Name</th>
+                                <th>PRN</th>
+                                <th>Email</th>
+                          </tr>
+                          <tr>
+                                <tr>Siddharth Kanikdale</tr>
+                                <tr>0120190145</tr>
+                                <tr>spkanikdale@mitaoe.ac.in</tr>
+                          </tr>
+                          <tr>
+                                <tr>Vedant Dawange</tr>
+                                <tr>PRN</tr>
+                                <tr>Email</tr>
+                          </tr>
+                          <tr>
+                                <tr>Purva Potdukhe</tr>
+                                <tr>PRN</tr>
+                                <tr>Email</tr>
+                          </tr>
+                          <tr>
+                                <tr>Anushka Yadav</tr>
+                                <tr>PRN</tr>
+                                <tr>aayadav@mitaoe.ac.in</tr>
+                          </tr>
+                      </table>"""
+st.sidebar.markdown()
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 detector = HandDetector(maxHands=1)
