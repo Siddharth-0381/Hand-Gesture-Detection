@@ -7,7 +7,7 @@ import streamlit as st
 
 model = tf.keras.models.load_model("hGDetection.h5")
 st.title("Hand Gesture Detection")
- html_temp_home1 = """<p>Submitted By : </p><br>
+html_table = """<p>Submitted By : </p><br>
                         <table>
                           <tr>
                                 <th>Name</th>
@@ -35,7 +35,7 @@ st.title("Hand Gesture Detection")
                                 <tr>aayadav@mitaoe.ac.in</tr>
                           </tr>
                       </table>"""
-st.sidebar.markdown()
+st.sidebar.markdown(html_table, unsafe_allow_html=True)
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 detector = HandDetector(maxHands=1)
