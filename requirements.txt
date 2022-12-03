@@ -2,7 +2,7 @@ streamlit
 tensorflow-cpu
 numpy>=1.19.5
 Keras>=2.4.3
-opencv-python-headless>=4.5.1.48
+opencv-python-headless
 streamlit-webrtc>=0.11.0
 Markdown>=3.4.1
 tensorflow>=2.10.1
