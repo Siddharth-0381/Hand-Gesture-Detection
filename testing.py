@@ -15,24 +15,24 @@ html_table = """<p>Submitted By : </p><br>
                                 <th>Email</th>
                           </tr>
                           <tr>
-                                <tr>Siddharth Kanikdale</tr>
-                                <tr>0120190145</tr>
-                                <tr>spkanikdale@mitaoe.ac.in</tr>
+                                <td>Siddharth Kanikdale</td>
+                                <td>0120190145</td>
+                                <td>spkanikdale@mitaoe.ac.in</td>
                           </tr>
                           <tr>
-                                <tr>Vedant Dawange</tr>
-                                <tr>PRN</tr>
-                                <tr>Email</tr>
+                                <td>Vedant Dawange</td>
+                                <td>PRN</td>
+                                <td>Email</td>
                           </tr>
                           <tr>
-                                <tr>Purva Potdukhe</tr>
-                                <tr>PRN</tr>
-                                <tr>Email</tr>
+                                <td>Purva Potdukhe</td>
+                                <td>PRN</td>
+                                <td>Email</td>
                           </tr>
                           <tr>
-                                <tr>Anushka Yadav</tr>
-                                <tr>PRN</tr>
-                                <tr>aayadav@mitaoe.ac.in</tr>
+                                <td>Anushka Yadav</td>
+                                <td>PRN</td>
+                                <td>aayadav@mitaoe.ac.in</td>
                           </tr>
                       </table>"""
 st.sidebar.markdown(html_table, unsafe_allow_html=True)
