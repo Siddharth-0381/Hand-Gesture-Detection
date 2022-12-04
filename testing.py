@@ -37,8 +37,23 @@ html_table = """<p>Submitted By : </p><br>
                       </table>"""
 st.sidebar.markdown(html_table, unsafe_allow_html=True)
 
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-detector = HandDetector(maxHands=1)
+# cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+# detector = HandDetector(maxHands=1)
+
+class VideoProcessor:
+    def recv(self, frame):
+        detector = HandDetector(maxHands=1, detectionCon=0.8)
+        img = frame.to_ndarray(format="bgr24")
+        hands, img = detector.findHands(img)
+        return av.VideoFrame.from_ndarray(img, format="bgr24")
+      
+cap = webrtc_streamer(
+        key="example",
+        video_processor_factory=VideoProcessor,
+        media_stream_constraints={
+            "video": True,
+            "audio": False
+        }
 offset = 20  # To capture entire hand
 imageSize = 300
 
@@ -67,6 +82,7 @@ while True:
             wGap = math.ceil((imageSize - wCal) / 2)
             imgWhite[:, wGap: wCal + wGap] = imgResize
             imgTest = cv2.resize(imgWhite, (128, 128), interpolation=cv2.INTER_AREA)
+            imgTest = st.image()
             imgTest = cv2.cvtColor(imgTest, cv2.COLOR_RGB2GRAY)
             imgTest = tf.expand_dims(imgTest, axis=0)
             prediction = model.predict(imgTest)
