@@ -54,6 +54,7 @@ cap = webrtc_streamer(
             "video": True,
             "audio": False
         }
+)
 offset = 20  # To capture entire hand
 imageSize = 300
 
