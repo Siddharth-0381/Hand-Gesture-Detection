@@ -47,14 +47,7 @@ class VideoProcessor:
         hands, img = detector.findHands(img)
         return av.VideoFrame.from_ndarray(img, format="bgr24")
       
-cap = webrtc_streamer(
-        key="example",
-        video_processor_factory=VideoProcessor,
-        media_stream_constraints={
-            "video": True,
-            "audio": False
-        }
-)
+cap = webrtc_streamer(key="example", video_processor_factory=VideoProcessor, media_stream_constraints={"video": True, "audio": False})
 offset = 20  # To capture entire hand
 imageSize = 300
 
