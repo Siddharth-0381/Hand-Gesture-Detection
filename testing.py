@@ -56,7 +56,7 @@ label = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'Hello', 'I', 'I love You', 'J'
          'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Yes', 'Z']
 
 while True:
-    success, img = cap.read()
+    img = cap
     imgOutput = img
     hands, img = detector.findHands(img)
     if hands:
