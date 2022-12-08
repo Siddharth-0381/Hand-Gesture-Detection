@@ -48,7 +48,7 @@ class VideoProcessor:
         hands, img = detector.findHands(img)
         return av.VideoFrame.from_ndarray(img, format="rgb24")
       
-cap = webrtc_streamer(key="example", video_processor_factory=VideoProcessor, media_stream_constraints={ "video": True, "audio": False})
+
 offset = 20  # To capture entire hand
 imageSize = 300
 
@@ -56,6 +56,7 @@ label = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'Hello', 'I', 'I love You', 'J'
          'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Yes', 'Z']
 
 while True:
+    cap = webrtc_streamer(key="example", video_processor_factory=VideoProcessor, media_stream_constraints={ "video": True, "audio": False})
     img = cap
     imgOutput = img
     hands, img = detector.findHands(img)
