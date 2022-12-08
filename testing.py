@@ -43,10 +43,10 @@ st.sidebar.markdown(html_table, unsafe_allow_html=True)
 
 class VideoProcessor:
     def recv(self, frame):
-        detector = HandDetector(maxHands=1, detectionCon=0.8)
-        img = frame.to_ndarray(format="bgr24")
+        detector = HandDetector(maxHands=1)
+        img = frame.to_ndarray(format="rgb24")
         hands, img = detector.findHands(img)
-        return av.VideoFrame.from_ndarray(img, format="bgr24")
+        return av.VideoFrame.from_ndarray(img, format="rgb24")
       
 cap = webrtc_streamer(key="example", video_processor_factory=VideoProcessor, media_stream_constraints={ "video": True, "audio": False})
 offset = 20  # To capture entire hand
