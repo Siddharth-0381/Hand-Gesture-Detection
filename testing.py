@@ -39,7 +39,8 @@ html_table = """<p>Submitted By : </p><br>
 st.sidebar.markdown(html_table, unsafe_allow_html=True)
 
 # cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-# detector = HandDetector(maxHands=1)
+cap = webrtc_streamer(key="example")
+detector = HandDetector(maxHands=1)
 
 offset = 20  # To capture entire hand
 imageSize = 300
@@ -48,7 +49,7 @@ label = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'Hello', 'I', 'I love You', 'J'
          'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Yes', 'Z']
 
 while True:
-    cap = webrtc_streamer(key="example")
+    
     img = cap
     imgOutput = img
     hands, img = detector.findHands(img)
