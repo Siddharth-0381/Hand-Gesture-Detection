@@ -56,7 +56,7 @@ label = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'Hello', 'I', 'I love You', 'J'
          'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Yes', 'Z']
 
 while True:
-    cap = webrtc_streamer(key="example", video_processor_factory=VideoProcessor, media_stream_constraints={ "video": True, "audio": False})
+    cap = webrtc_ctx.video_transformer.result_queue.get(timeout=1.0)
     img = cap
     imgOutput = img
     hands, img = detector.findHands(img)
